@@ -12,9 +12,9 @@ WORKDIR /tmp/todo-frontend
 
 COPY . /tmp/todo-frontend
 
-RUN cd /tmp/todo-frontend
-RUN npm install
-RUN npm run build
+RUN cd /tmp/todo-frontenddo-288-apps-git && \
+    npm install && \
+    npm run build
 
 # https://github.com/sclorg/nginx-container
 FROM registry.access.redhat.com/ubi8/nginx-118
