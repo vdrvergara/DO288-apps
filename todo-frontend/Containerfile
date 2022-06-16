@@ -8,6 +8,8 @@ ENV REACT_APP_API_HOST=""
 
 USER 0
 
+WORKDIR /tmp/todo-frontend
+
 COPY . /tmp/todo-frontend
 
 RUN cd /tmp/todo-frontend
@@ -24,5 +26,9 @@ LABEL updatedDate="2021-05-19"
 
 COPY nginx.conf /etc/nginx/
 COPY --from=appbuild /tmp/todo-frontend/build /usr/share/nginx/html
+
+EXPOSE 8080
+
+USER nginx
 
 CMD nginx -g "daemon off;"
