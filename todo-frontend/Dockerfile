@@ -12,7 +12,7 @@ WORKDIR /tmp/todo-frontend
 
 COPY . /tmp/todo-frontend
 
-RUN cd /tmp/todo-frontenddo-288-apps-git && \
+RUN cd /tmp/todo-frontend && \
     npm install && \
     npm run build
 
